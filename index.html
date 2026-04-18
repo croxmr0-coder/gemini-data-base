@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Muhterem Panel | Restricted Access</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="intelligence-vibe">
+    <div id="login-screen">
+        <div class="terminal">
+            <h1>SİSTEME ERİŞİM İÇİN KİMLİK DOĞRULAYIN</h1>
+            <input type="password" id="pass-input" placeholder="ERİŞİM KODUNU GİRİNİZ...">
+            <button onclick="checkAccess()">GİRİŞ YAP</button>
+            <p id="error-msg"></p>
+        </div>
+    </div>
+
+    <div id="main-panel" style="display:none;">
+        <header>
+            <h2 id="welcome-text"></h2>
+            <div class="system-status">SİSTEM DURUMU: AKTİF</div>
+        </header>
+        
+        <nav>
+            <button onclick="showTab('photos')">FOTOĞRAFLAR</button>
+            <button onclick="showTab('videos')">VİDEOLAR</button>
+            <button onclick="showTab('notes')">NOTLAR</button>
+        </nav>
+
+        <main id="content-area">
+            </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

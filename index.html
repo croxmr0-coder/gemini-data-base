@@ -2,33 +2,45 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Muhterem Panel | Restricted Access</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUHTEREM PANEL | Unauthorized Access is Prohibited</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="intelligence-vibe">
+<body>
+    <div class="scanline"></div>
+
     <div id="login-screen">
-        <div class="terminal">
-            <h1>SİSTEME ERİŞİM İÇİN KİMLİK DOĞRULAYIN</h1>
-            <input type="password" id="pass-input" placeholder="ERİŞİM KODUNU GİRİNİZ...">
-            <button onclick="checkAccess()">GİRİŞ YAP</button>
-            <p id="error-msg"></p>
+        <div class="terminal-box">
+            <div class="glitch" data-text="MUHTEREM_PANEL_V1.0">MUHTEREM_PANEL_V1.0</div>
+            <p class="status-text">KİMLİK DOĞRULAMA GEREKLİ...</p>
+            <div class="input-wrapper">
+                <span class="prompt">></span>
+                <input type="password" id="pass-input" placeholder="ERİŞİM KODU..." autofocus>
+            </div>
+            <button onclick="checkAccess()" class="login-btn">SİSTEME SIZ</button>
+            <p id="error-msg" class="error"></p>
         </div>
     </div>
 
     <div id="main-panel" style="display:none;">
-        <header>
-            <h2 id="welcome-text"></h2>
-            <div class="system-status">SİSTEM DURUMU: AKTİF</div>
+        <header class="panel-header">
+            <div class="user-info">
+                <span id="welcome-text"></span>
+                <span class="pulse-dot"></span>
+            </div>
+            <div class="system-time" id="clock">00:00:00</div>
         </header>
-        
-        <nav>
-            <button onclick="showTab('photos')">FOTOĞRAFLAR</button>
-            <button onclick="showTab('videos')">VİDEOLAR</button>
-            <button onclick="showTab('notes')">NOTLAR</button>
+
+        <nav class="side-nav">
+            <button class="nav-btn active" onclick="switchTab('photos')">FOTOĞRAFLAR</button>
+            <button class="nav-btn" onclick="switchTab('videos')">VİDEOLAR</button>
+            <button class="nav-btn" onclick="switchTab('notes')">NOTLAR</button>
+            <button class="nav-btn upload-btn" onclick="openUpload()">DOSYA YÜKLE +</button>
         </nav>
 
-        <main id="content-area">
-            </main>
+        <section id="display-area" class="content-grid">
+            <div class="empty-state">VERİ BEKLENİYOR...</div>
+        </section>
     </div>
 
     <script src="script.js"></script>
